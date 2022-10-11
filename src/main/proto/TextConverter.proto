@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+
+option java_multiple_files = true;
+option java_package = "via.sdj3.protobuf";
+//Service definition
+service TexConverter {
+  rpc ToUpper (RequestText) returns (RequestText);
+  rpc capitalizeFirstCharacter (RequestText) returns (RequestText);
+}
+
+//The request message containing the text
+message RequestText {
+  string input_text = 1;
+}
+message ResponseText {
+  string output_text = 1;
+}
